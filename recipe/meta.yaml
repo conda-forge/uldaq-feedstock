@@ -1,18 +1,18 @@
 {% set name = "uldaq" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 5cfc152a67381717bcf6f275f4f059c7adfae830eb4dfca35d90972a6021f84c
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 6e3def9bee06e37129b18654c9ac2c6804511c8d80ffb559d4aa886ecf6bcef5
   patches:
     - 0001-ul_c_interface-use-ctypes.util.find_library.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -28,11 +28,11 @@ test:
     - uldaq
 
 about:
-  home: "http://www.mccdaq.com"
+  home: http://www.mccdaq.com
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Universal Library Python API for Measurement Computing DAQ devices"
+  summary: Universal Library Python API for Measurement Computing DAQ devices
   doc_url: https://www.mccdaq.com/PDFs/Manuals/UL-Linux/python
 
 extra:
