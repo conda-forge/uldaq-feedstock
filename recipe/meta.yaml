@@ -1,5 +1,5 @@
 {% set name = "uldaq" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6e3def9bee06e37129b18654c9ac2c6804511c8d80ffb559d4aa886ecf6bcef5
+  sha256: fb315cad3ea755267a9e0d9f723dbb9d870253955ab9c3d49c71affb30553fe1
   patches:
     - 0001-ul_c_interface-use-ctypes.util.find_library.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
